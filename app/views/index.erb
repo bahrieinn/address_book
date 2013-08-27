@@ -1,0 +1,57 @@
+<h1>My Address Book</h1>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Relationship</th>
+    <th>Action</th>
+  </tr>
+  
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.first_name %></td>
+      <td><%= contact.last_name %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.gender %></td>
+      <td><%= contact.relation %></td>
+      <td> (delete/edit)</td>
+    </tr>
+  <% end %>
+
+</table>
+
+<form action="/contact/new" method="GET">
+    <input type="submit" value="Add Contact">
+</form>
+
+<!-- <form action="/contacts" method="post">
+  <p>Add a contact</p>
+  <label for="first_name">First Name</label>
+  <input type="text" id="first_name" name="contact[first_name]" placeholder="John"><br>
+  
+  <label for="last_name">Last Name</label>
+  <input type="text" id="last_name" name="contact[last_name]" placeholder="Smith"><br>
+  
+  <label for="email">Email</label>
+  <input type="email" id="email" name="contact[email]" placeholder="john@smith.com"><br>
+
+  <p>Gender:</p>
+  <input type="radio" id="male" name="contact[gender]" >
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="contact[gender]" >
+  <label for="female">Female</label><br>
+  
+  <p>Relation</p>
+  <input type="checkbox" id="friend" name="relation" value="friend">
+  <label for="friend">Friend</label><br>
+  <input type="checkbox" id="relative" name="relation" value="relative">
+  <label for="relative">Relative</label><br>
+  <input type="checkbox" id="coworker" name="relation" value="coworker">
+  <label for="coworker">Coworker</label><br>
+
+  <input type="submit">
+</form> -->
+

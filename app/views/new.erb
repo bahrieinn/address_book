@@ -1,0 +1,28 @@
+<h1>Add a Contact</h1>
+
+<form action="/contacts" method="POST">
+  <label for="first_name">First Name</label>
+  <input type="text" id="first_name" name="contact[first_name]" placeholder="John"><br>
+  
+  <label for="last_name">Last Name</label>
+  <input type="text" id="last_name" name="contact[last_name]" placeholder="Smith"><br>
+  
+  <label for="email">Email</label>
+  <input type="email" id="email" name="contact[email]" placeholder="john@smith.com"><br>
+
+  <p>Gender:</p>
+  <input type="radio" id="male" name="contact[gender]" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="contact[gender]" value="female">
+  <label for="female">Female</label><br>
+  
+  <p>Relation:</p>
+  <input type="checkbox" id="friend" name="contact[relation]" value="friend">
+  <label for="friend">Friend</label>
+  <input type="checkbox" id="relative" name="contact[relation]" value="relative">
+  <label for="relative">Relative</label>
+  <input type="checkbox" id="coworker" name="contact[relation]" value="coworker">
+  <label for="coworker">Coworker</label>
+
+  <input type="submit">
+</form>
