@@ -1,17 +1,12 @@
-<h1>Add a Contact</h1>
-
-<%= erb :_form_fields, :layout => false %>
-
-<!-- 
 <form action="/contacts" method="POST">
   <label for="first_name">First Name</label>
-  <input type="text" id="first_name" name="contact[first_name]" placeholder="John"><br>
+  <input type="text" id="first_name" name="contact[first_name]" placeholder="John" value="<%=@contact.try(:first_name)%>"><br>
   
   <label for="last_name">Last Name</label>
-  <input type="text" id="last_name" name="contact[last_name]" placeholder="Smith"><br>
+  <input type="text" id="last_name" name="contact[last_name]" placeholder="Smith" value="<%=@contact.try(:last_name)%>"><br>
   
   <label for="email">Email</label>
-  <input type="email" id="email" name="contact[email]" placeholder="john@smith.com"><br>
+  <input type="email" id="email" name="contact[email]" placeholder="john@smith.com" value="<%=@contact.try(:email)%>"><br>
 
   <p>Gender:</p>
   <input type="radio" id="male" name="contact[gender]" value="male">
@@ -28,4 +23,4 @@
   <label for="coworker">Coworker</label>
 
   <input type="submit">
-</form> -->
+</form>

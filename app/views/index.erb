@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Email</th>
@@ -12,12 +13,13 @@
   
   <% @contacts.each do |contact| %>
     <tr>
+      <td><%= contact.id%></td>
       <td><%= contact.first_name %></td>
       <td><%= contact.last_name %></td>
       <td><%= contact.email %></td>
       <td><%= contact.gender %></td>
       <td><%= contact.relation %></td>
-      <td> (delete/edit)</td>
+      <td> <a href="contact/<%=contact.id%>/edit">Edit</a></td>
     </tr>
   <% end %>
 

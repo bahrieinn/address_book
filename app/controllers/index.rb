@@ -13,6 +13,15 @@ get '/contact/new' do
   erb :new
 end
 
+get '/contact/:id' do
+  @contact = Contact.find(params[:id])
+  erb :show
+end
+
+get '/contact/:id/edit' do
+  @contact = Contact.find(params[:id])
+  erb :edit
+end
 
 
 ############## POST ###################
@@ -26,4 +35,10 @@ post '/contacts' do
     erb :new
   end
 end
+
+post '/contact/:id/edit' do
+
+end
+
+
 
