@@ -19,7 +19,11 @@
       <td><%= contact.email %></td>
       <td><%= contact.gender %></td>
       <td><%= contact.relation %></td>
-      <td> <a href="contact/<%=contact.id%>/edit">Edit</a></td>
+      <td> <a href="/contacts/<%=contact.id%>/edit">Edit</a> | 
+           <form action="/contacts/<%=contact.id%>/delete" method="POST">
+             <input type="submit" value="Delete">
+           </form>
+      </td>
     </tr>
   <% end %>
 

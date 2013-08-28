@@ -1,7 +1,7 @@
 <h1>Add a Contact</h1>
-
-<%= erb :_form_fields, :layout => false %>
-
+<form action="/contacts" method="POST">
+  <%= erb :_form_fields, :layout => false %>
+</form>
 <!-- 
 <form action="/contacts" method="POST">
   <label for="first_name">First Name</label>

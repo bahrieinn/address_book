@@ -1,12 +1,13 @@
 ############## GET ###################
 
 get '/' do
-  @contacts = Contact.all
+  @contacts = Contact.order('last_name').limit(10)
   erb :index
 end
 
 get '/contacts' do
-   redirect('/')
+   @contacts = Contact.all
+   erb :index
 end
 
 get '/contact/new' do
@@ -18,7 +19,7 @@ get '/contact/:id' do
   erb :show
 end
 
-get '/contact/:id/edit' do
+get '/contacts/:id/edit' do
   @contact = Contact.find(params[:id])
   erb :edit
 end
@@ -36,8 +37,19 @@ post '/contacts' do
   end
 end
 
-post '/contact/:id/edit' do
+post '/contacts/:id' do
+  @contact = Contact.find(params[:id])
+  if @contact.update_attributes(params[:contact])
+    redirect to("/contacts")
+  else
+    erb :show
+  end
+end
 
+post '/contacts/:id/delete' do
+  @contact = Contact.find(params[:id])
+  @contact.destroy
+  redirect('/contacts')
 end
 
 
